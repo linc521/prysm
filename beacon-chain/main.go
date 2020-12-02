@@ -131,6 +131,7 @@ func main() {
 			// the colors are ANSI codes and seen as gibberish in the log files.
 			formatter.DisableColors = ctx.String(cmd.LogFileName.Name) != ""
 			formatter.PadLevelText = true
+			formatter.ForceColors = true
 			logrus.SetFormatter(formatter)
 		case "fluentd":
 			f := joonix.NewFormatter()
